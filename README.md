@@ -32,8 +32,8 @@ Routes parent enquiries and teacher lesson-planning requests to specialist AI ag
 | Resource | Link |
 |----------|------|
 | 🎥 Project Demonstration | https://youtu.be/e-SdcYphtFI |
-| 💻 GitHub Repository | https://github.com/Arsalan-Ahmed006|
-| 🏆 Kaggle Competition | https://www.kaggle.com/competitions/ai-agents-intensive-capstone |
+| 💻 GitHub Repository | https://github.com/Arsalan-Ahmed006/school-ai-assistant |
+| 🏆 Kaggle Competition | https://www.kaggle.com/competitions/vibecoding-agents-capstone-project |
 
 ---
 
@@ -687,17 +687,14 @@ https://youtu.be/e-SdcYphtFI
 ---
 
 ### 💻 GitHub Repository
+https://github.com/Arsalan-Ahmed006/school-ai-assistant
 
-https://github.com/Arsalan-Ahmed006
-
-> *(Replace this with your repository URL after creating the repository, for example: https://github.com/Arsalan-Ahmed006/school-ai-assistant)*
-
+> 
 ---
 
 ### 🏆 Kaggle Competition
 
-https://www.kaggle.com/competitions/ai-agents-intensive-capstone
-
+https://www.kaggle.com/competitions/vibecoding-agents-capstone-project
 ---
 
 # 🙏 Acknowledgements
