@@ -1,0 +1,39 @@
+# Agent Configuration
+# School AI Assistant — Local Development Config
+
+agent:
+  name: school-ai-assistant
+  version: "0.1.0"
+  description: "AI-powered school assistant for students and educators"
+  author: "Arsalan-Ahmed006"
+
+model:
+  provider: google-ai-studio
+  model_id: gemini-2.5-flash
+  retry_attempts: 3
+
+runtime:
+  session_type: in_memory
+  deployment_target: none
+  environment: local
+
+capabilities:
+  - conversational_qa
+  - concept_explanation
+  - homework_assistance
+  - study_summarization
+  - research_support
+
+tools:
+  # Placeholder tools — replace with school-specific implementations
+  - name: get_weather
+    status: example
+  - name: get_current_time
+    status: example
+
+# Future tools to implement:
+# - search_curriculum
+# - get_study_resources
+# - explain_concept
+# - grade_submission
+# - generate_quiz

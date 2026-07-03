@@ -1,0 +1,73 @@
+# .pre-commit-config.yaml
+#
+# Runs automatically on `git commit` after `pre-commit install`.
+# To run all hooks manually: pre-commit run --all-files
+# To update hooks to latest versions: pre-commit autoupdate
+#
+# Hook execution order: pre-commit-hooks → ruff → semgrep
+# All hooks must pass before a commit is accepted.
+#
+# Note: No default_language_version is set here — pre-commit will use
+# whatever Python interpreter is active in the environment. This avoids
+# "failed to find interpreter" errors on machines that don't have a
+# specific Python version (e.g., python3.11) in PATH.
+
+repos:
+  # ---------------------------------------------------------------------------
+  # 1. General file hygiene — pre-commit-hooks (official hook collection)
+  #    Catches trivial but common mistakes before anything else runs.
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace       # Remove trailing spaces on every line
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer         # Ensure every file ends with a newline
+      - id: check-yaml                # Validate YAML syntax (catches .pre-commit-config.yaml itself)
+      - id: check-toml                # Validate TOML syntax (catches pyproject.toml)
+      - id: check-json                # Validate JSON files
+      - id: check-added-large-files   # Block files > 500 KB from being committed
+        args: [--maxkb=500]
+      - id: check-merge-conflict      # Block accidental merge-conflict markers
+      - id: check-case-conflict       # Prevent case-insensitive filename collisions (Windows/macOS safe)
+      - id: detect-private-key        # Block accidental private-key commits (PEM, RSA, etc.)
+      - id: mixed-line-ending         # Normalize line endings (LF)
+        args: [--fix=lf]
+      - id: debug-statements          # Catch leftover breakpoint() / pdb calls
+      - id: no-commit-to-branch       # Prevent direct commits to main/master
+        args: [--branch=main, --branch=master]
+
+  # ---------------------------------------------------------------------------
+  # 2. Python linting and formatting — ruff
+  #    Fast Rust-based linter + formatter. Replaces flake8, black, isort.
+  #    Config is read from [tool.ruff] in pyproject.toml.
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.7
+    hooks:
+      - id: ruff                      # Lint: pycodestyle, pyflakes, isort, bugbear, etc.
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format               # Format: equivalent to Black
+
+  # ---------------------------------------------------------------------------
+  # 3. Static Application Security Testing — semgrep
+  #    Scans Python source for known vulnerability patterns.
+  #    Uses the curated python.lang.security rule pack — no account required.
+  #    Only runs on Python files to avoid false positives on YAML/TOML.
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/returntocorp/semgrep
+    rev: v1.79.0
+    hooks:
+      - id: semgrep
+        name: semgrep-security        # Human-readable name in hook output
+        # Scan only app/ source files — skip tests, venv, and generated files.
+        # python.lang.security covers: hardcoded secrets, SQL injection, path
+        # traversal, insecure deserialization, and other OWASP Top-10 patterns.
+        args:
+          - --config=p/python
+          - --config=p/secrets
+          - --error                   # Exit non-zero on any finding (blocks commit)
+          - --exclude=tests/
+          - --exclude=.venv/
+          - --exclude=htmlcov/
+        types: [python]

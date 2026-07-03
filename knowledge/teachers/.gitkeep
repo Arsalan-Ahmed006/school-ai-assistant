@@ -1,0 +1,3 @@
+# Drop curriculum and lesson-plan documents for teachers here (PDFs, text files, etc.)
+# This folder is scanned at runtime by app/tools/knowledge_retrieval.py
+# Do NOT commit actual documents to source control.
