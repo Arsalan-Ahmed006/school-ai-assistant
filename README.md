@@ -17,7 +17,7 @@
 
 **👨‍💻 Arsalan Ahmed (Team Lead)**
 
-**👨‍💻 Manzar Ahmed**
+**👨‍💻 Manzar Rasool**
 
 ---
 
@@ -153,7 +153,7 @@ This project was developed as part of the **Google × Kaggle AI Agents Intensive
 | Role | Name |
 |------|------|
 | 🏆 Team Lead | **Arsalan Ahmed** |
-| 👨‍💻 Team Member | **Manzar Ahmed** |
+| 👨‍💻 Team Member | **Manzar Rasool** |
 
 ---
 
@@ -177,7 +177,7 @@ This project was developed as part of the **Google × Kaggle AI Agents Intensive
 
 ---
 
-## 👨‍💻 Manzar 
+## 👨‍💻 Manzar Rasool
 
 - Project development support
 - Testing and debugging
@@ -674,7 +674,7 @@ The School AI Assistant demonstrates all major concepts covered throughout the c
 | Name | Role |
 |------|------|
 | **Arsalan Ahmed** | Team Lead |
-| **Manzar Ahmed** | Team Member |
+| **Manzar Rasool** | Team Member |
 
 ---
 
