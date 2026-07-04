@@ -165,26 +165,27 @@ This project was developed as part of the **Google × Kaggle AI Agents Intensive
 - Multi-Agent System design
 - Google ADK implementation
 - Parent FAQ Agent
-- Teacher Lesson Planning Agent
 - Tool Calling implementation
 - Retrieval-Augmented Generation (RAG)
-- Security Guardrails
 - FastAPI backend integration
 - GitHub repository management
-- Documentation
-- Presentation preparation
 - Video demonstration
+- Documentation review
 
 ---
 
 ## 👨‍💻 Manzar Rasool
 
-- Project development support
+- Project planning and architecture
+- Multi-Agent System design
+- Teacher Lesson Planning Agent
+- Security Guardrails
+- Documentation
 - Testing and debugging
 - Feature validation
 - UI testing
-- Documentation review
-- Presentation feedback
+- Presentation preparation
+
 
 ---
 
